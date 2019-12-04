@@ -1,0 +1,3 @@
+* Taller de Visualización y Alfabetización de Datos
+
+Realizado en ETOPIA (Zaragoza) 25-27/11/2019 durante 15 horas

@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Taller de Visualización y Alfabetización de Datos</title>
+<meta name="generator" content="Org mode" />
+<meta name="description" content="Taller de 15 horas para la Fundación Zaragoza Activa, 25-27/11/2019."
+ />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orga543494">Taller de Visualización y Alfabetización de Datos</a></li>
+<li><a href="#org61cb636">Contenidos y planificación</a>
+<ul>
+<li><a href="#org60d2fdd">Lo que hicimos</a></li>
+<li><a href="#orgd96f921">Objetivos específicos</a></li>
+<li><a href="#org76a971d">Competencias</a></li>
+</ul>
+</li>
+<li><a href="#org0491b3a">Software</a>
+<ul>
+<li><a href="#orge50e6be">Navegadores</a></li>
+<li><a href="#org07095dd">Emulador de terminal</a></li>
+<li><a href="#orgce8788b">Editor de textos</a></li>
+<li><a href="#org7665a44">Git</a></li>
+<li><a href="#org8fba2dc">R</a></li>
+<li><a href="#org0149d54">Python</a>
+<ul>
+<li><a href="#orgc18617a">Librerías</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc99f117">Por qué Visualizar</a>
+<ul>
+<li><a href="#org2e181cf">Estatuas</a></li>
+<li><a href="#org2ec68ee">School of Poetic Computation</a></li>
+<li><a href="#org1bfa4e5">The mother of all Demos</a></li>
+<li><a href="#org8b92837">Command Line: UNIX</a>
+<ul>
+<li><a href="#orgca23cf4">GOW</a></li>
+<li><a href="#org2e00343">Cygwin</a></li>
+<li><a href="#org87257d2">Emacs</a></li>
+<li><a href="#orgf4e788f">CSV</a></li>
+</ul>
+</li>
+<li><a href="#orgd60972c">Podcast</a>
+<ul>
+<li><a href="#org799f55a">Ecos de Medialab</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org955c420">Recolección de datos</a></li>
+<li><a href="#org6be12f5">Análisis de datos</a>
+<ul>
+<li><a href="#orgd4510d5">Open Refine</a></li>
+<li><a href="#orge98dfe3">csvkit</a></li>
+</ul>
+</li>
+<li><a href="#orga32b785">Gestión de datos</a>
+<ul>
+<li><a href="#org9b8fdf7">Github</a></li>
+</ul>
+</li>
+<li><a href="#orgf3c8490">Proyectos</a>
+<ul>
+<li><a href="#org519e3f8">Ciudad desigual</a></li>
+</ul>
+</li>
+<li><a href="#orga2efebb">Bases</a>
+<ul>
+<li><a href="#org753a135">Editor de textos</a></li>
+<li><a href="#org8e94d50">Navegador</a></li>
+<li><a href="#org542717c">Donald Knuth</a>
+<ul>
+<li><a href="#org6ba4a9c">Literate Programming</a></li>
+</ul>
+</li>
+<li><a href="#orge648128">Open Refine</a></li>
+</ul>
+</li>
+<li><a href="#org3d8fed5">Data</a>
+<ul>
+<li><a href="#org793f889">Dataset for visualisation construction</a></li>
+</ul>
+</li>
+<li><a href="#orgf76dc74">R</a>
+<ul>
+<li><a href="#org7f77a27">Por qué R</a></li>
+</ul>
+</li>
+<li><a href="#org0271673">Data</a>
+<ul>
+<li><a href="#orgafa3f51">Medios</a></li>
+<li><a href="#orgdf2e10d">España</a></li>
+</ul>
+</li>
+<li><a href="#orgf583862">Google Spreadsheet</a>
+<ul>
+<li><a href="#orgd952dba">ImportURL</a></li>
+<li><a href="#org847a169">ImportXML</a></li>
+<li><a href="#org3ca26b6">ImportFeed</a></li>
+</ul>
+</li>
+<li><a href="#org940e070">UTC Format</a>
+<ul>
+<li><a href="#org6dafbfe">Dates</a></li>
+<li><a href="#org906a2cf">Times</a></li>
+<li><a href="#orgeadead5">Date/Times</a></li>
+</ul>
+</li>
+<li><a href="#orgc54ec00">Datavis</a>
+<ul>
+<li><a href="#org485697a">Historia</a>
+<ul>
+<li><a href="#org162bbee">Charles Minard</a></li>
+<li><a href="#orga7014e2">John Snow</a></li>
+<li><a href="#org27a0e51">Florence Nightingale</a></li>
+</ul>
+</li>
+<li><a href="#org5548502">BBPlot</a></li>
+<li><a href="#org2dfcafa">BBC R and Data Journalism Cookbook for R Graphics</a></li>
+<li><a href="#org9b6c9a7">Arte final</a></li>
+<li><a href="#orga01b091">Recursos</a></li>
+</ul>
+</li>
+<li><a href="#org89c39db">Ejemplos data journalism y data visualisation</a>
+<ul>
+<li><a href="#orgdf51f86">NPR</a>
+<ul>
+<li><a href="#org4b83f14">Vídeos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org4b0fd97">Web</a>
+<ul>
+<li><a href="#org6d9a043">Plantillas HTML</a></li>
+<li><a href="#org6fd7cb1">SSG</a></li>
+</ul>
+</li>
+<li><a href="#org6d29b0b">Seguridad</a>
+<ul>
+<li><a href="#orgdad44fe">Tor Browser</a></li>
+<li><a href="#orgfa6764b">VPN</a></li>
+</ul>
+</li>
+<li><a href="#org1ae63cb">Recursos</a></li>
+<li><a href="#orgc11f42d">Periodismo</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga543494" class="outline-2">
+<h2 id="orga543494">Taller de Visualización y Alfabetización de Datos</h2>
+<div class="outline-text-2" id="text-orga543494">
+<p>
+La visualización de datos es una de las etapas clásicas del proceso de narración periodística basada en datos. Visualizar los datos permite analizarlos mejor pero también puede emplearse como producto resultante de la investigación.
+</p>
+
+<p>
+Para ello se necesita contar con una especie de alfabetización de los datos, una evolución, desviación o actualización de los conocimientos requeridos para la sociedad de la información digitalizada.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org61cb636" class="outline-2">
+<h2 id="org61cb636">Contenidos y planificación</h2>
+<div class="outline-text-2" id="text-org61cb636">
+<p>
+El plan decía que en la primera sesión veremos proyectos realizados
+durante los talleres de producción colaborativa Visualizar y
+Periodismo de Datos que comisarié durante cuatro años. A partir de ahí
+extraeremos plantillas, herramientas y metodologías que nos servirán
+para definir la siguiente sesión.
+</p>
+
+<p>
+En la segunda sesión nos íbamos a poner a desarrollar un boceto de un proyecto de forma individual o preferiblemente por equipos.
+</p>
+
+<p>
+Finalmente, en la tercera sesión finalizaremos el boceto y lo presentaremos, planificando los pasos siguientes de desarrollo.
+</p>
+</div>
+
+<div id="outline-container-org60d2fdd" class="outline-3">
+<h3 id="org60d2fdd">Lo que hicimos</h3>
+<div class="outline-text-3" id="text-org60d2fdd">
+<p>
+Lo que hicimos realmente se ajustó a la primera sesión planificada más
+o menos pero luego trabajamos con diversas herramientas para dotarnos
+de una sólida base mínima con la que movernos en el mundo de los
+datos.
+</p>
+
+<p>
+En la segunda sesión trabajamos con <a href="https://github.com">Github</a> y <a href="https://openrefine.org">Open Refine</a> y uno de los
+conjuntos de datos del reto de movilidad, en concreto el de 2008 de
+uso de la bicicleta.
+</p>
+
+<p>
+Compartí dos recursos para ambos programas:
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com">Github</a>, <a href="https://github.com/flowsta/github">mis notas de Github</a>, repositorio que además se puede
+consultar en formato web con https</li>
+<li><a href="https://openrefine.org">Refine</a>, <a href="https://github.com/flowsta/refine">mis notas de Refine</a>, respositorio donde puedes además
+consultarlo en estilo /readthedocs/</li>
+</ul>
+
+<p>
+En la tercera vimos otros ejemplos y proyectos y nos metimos con la
+terminal.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgd96f921" class="outline-3">
+<h3 id="orgd96f921">Objetivos específicos</h3>
+<div class="outline-text-3" id="text-orgd96f921">
+<ol class="org-ol">
+<li>Conocer la disciplina de la visualización de datos</li>
+<li>Aprender herramientas libres y abiertas de visualización de datos</li>
+<li>Abordar un proceso de trabajo creativo colaborativo</li>
+<li>Fomentar el sentido crítico</li>
+<li>Realizar un proyecto en equipo</li>
+<li>Trabajar las espectativas y los tiempos</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org76a971d" class="outline-3">
+<h3 id="org76a971d">Competencias</h3>
+<div class="outline-text-3" id="text-org76a971d">
+<p>
+Según la RAE, <a href="https://dle.rae.es/visualizar">Visualizar</a> es en primer lugar *visibilizar*, y a continuación:
+</p>
+
+<blockquote>
+<ol class="org-ol">
+<li>tr. Representar mediante imágenes ópticas fenómenos de otro carácter; p. ej., el curso de la fiebre o los cambios de condiciones meteorológicas mediante gráficas, los cambios de corriente eléctrica o las oscilaciones sonoras con el oscilógrafo, etc.</li>
+
+<li>tr. Formar en la mente una imagen visual de un concepto abstracto.</li>
+
+<li>tr. Imaginar con rasgos visibles algo que no se tiene a la vista.</li>
+
+<li>tr. Inform. Hacer visible una imagen en un monitor. U. t. c. prnl.</li>
+</ol>
+</blockquote>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org0491b3a" class="outline-2">
+<h2 id="org0491b3a">Software</h2>
+<div class="outline-text-2" id="text-org0491b3a">
+<p>
+Es imprescindible tener la posibilidad de instalar, activar y
+desinstalar programas.
+</p>
+
+<p>
+Algunos de los que vemos:
+</p>
+
+<ul class="org-ul">
+<li>Chrome</li>
+<li>Firefox</li>
+<li>Terminal/Cygwin</li>
+<li>Editor de textos</li>
+<li>Git</li>
+<li>R</li>
+<li>Python</li>
+</ul>
+</div>
+<div id="outline-container-orge50e6be" class="outline-3">
+<h3 id="orge50e6be">Navegadores</h3>
+</div>
+<div id="outline-container-org07095dd" class="outline-3">
+<h3 id="org07095dd">Emulador de terminal</h3>
+</div>
+<div id="outline-container-orgce8788b" class="outline-3">
+<h3 id="orgce8788b">Editor de textos</h3>
+</div>
+<div id="outline-container-org7665a44" class="outline-3">
+<h3 id="org7665a44">Git</h3>
+</div>
+<div id="outline-container-org8fba2dc" class="outline-3">
+<h3 id="org8fba2dc">R</h3>
+</div>
+<div id="outline-container-org0149d54" class="outline-3">
+<h3 id="org0149d54">Python</h3>
+<div class="outline-text-3" id="text-org0149d54">
+<p>
+Podemos instalarlo de python.org o bien en la terminal.
+</p>
+
+<p>
+Una vez que lo tenemos instalado, si es desde la terminal, se lanza
+con <code>python</code> y veremos que el /prompt/ cambia y se pone con tres
+caracteres de "mayor que" <code>&gt;&gt;&gt;</code>.
+</p>
+
+<p>
+Para poder utilizar librerías lo mejor es instalar *pip* que es un
+gestor de librerías en python.
+</p>
+
+<p>
+¡Buenas noticias! Desde la versión de python 3.4 viene con pip
+preinstalado!
+</p>
+</div>
+
+<div id="outline-container-orgc18617a" class="outline-4">
+<h4 id="orgc18617a">Librerías</h4>
+<div class="outline-text-4" id="text-orgc18617a">
+<ul class="org-ul">
+<li>Scikit learn, <a href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a></li>
+</ul>
+</div>
+<ul class="org-ul">
+<li><a id="org7d018b9"></a>Jupyter<br />
+<div class="outline-text-5" id="text-org7d018b9">
+<p>
+Instalamos:
+</p>
+<pre class="example">
+pip install jupyter
+</pre>
+
+<p>
+Lanzamos:
+</p>
+<pre class="example">
+jupyter notebook
+</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc99f117" class="outline-2">
+<h2 id="orgc99f117">Por qué Visualizar</h2>
+<div class="outline-text-2" id="text-orgc99f117">
+</div>
+<div id="outline-container-org2e181cf" class="outline-3">
+<h3 id="org2e181cf">Estatuas</h3>
+<div class="outline-text-3" id="text-org2e181cf">
+<p>
+<a href="https://twitter.com/MichellePerSan/status/1198579088002301952">https://twitter.com/MichellePerSan/status/1198579088002301952</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2ec68ee" class="outline-3">
+<h3 id="org2ec68ee">School of Poetic Computation</h3>
+<div class="outline-text-3" id="text-org2ec68ee">
+<p>
+<a href="https://vimeo.com/374292495?ref=tw-share">https://vimeo.com/374292495?ref=tw-share</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1bfa4e5" class="outline-3">
+<h3 id="org1bfa4e5">The mother of all Demos</h3>
+<div class="outline-text-3" id="text-org1bfa4e5">
+<p>
+<a href="http://www.dougengelbart.org/firsts/dougs-1968-demo.html">http://www.dougengelbart.org/firsts/dougs-1968-demo.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b92837" class="outline-3">
+<h3 id="org8b92837">Command Line: UNIX</h3>
+<div class="outline-text-3" id="text-org8b92837">
+<p>
+<a href="http://rwet.decontextualize.com/book/unix/">http://rwet.decontextualize.com/book/unix/</a>
+</p>
+</div>
+
+<div id="outline-container-orgca23cf4" class="outline-4">
+<h4 id="orgca23cf4">GOW</h4>
+<div class="outline-text-4" id="text-orgca23cf4">
+<p>
+<a href="https://github.com/bmatzelle/gow/releases">https://github.com/bmatzelle/gow/releases</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2e00343" class="outline-4">
+<h4 id="org2e00343">Cygwin</h4>
+<div class="outline-text-4" id="text-org2e00343">
+<p>
+<a href="https://cygwin.com">https://cygwin.com</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org87257d2" class="outline-4">
+<h4 id="org87257d2">Emacs</h4>
+<div class="outline-text-4" id="text-org87257d2">
+<p>
+<a href="https://gnu.org/emacs">https://gnu.org/emacs</a> 
+</p>
+</div>
+</div>
+<div id="outline-container-orgf4e788f" class="outline-4">
+<h4 id="orgf4e788f">CSV</h4>
+<div class="outline-text-4" id="text-orgf4e788f">
+<p>
+<a href="http://www.dougstats.com/13-14RD.txt">http://www.dougstats.com/13-14RD.txt</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd60972c" class="outline-3">
+<h3 id="orgd60972c">Podcast</h3>
+<div class="outline-text-3" id="text-orgd60972c">
+</div>
+<div id="outline-container-org799f55a" class="outline-4">
+<h4 id="org799f55a">Ecos de Medialab</h4>
+<div class="outline-text-4" id="text-org799f55a">
+<ul class="org-ul">
+<li><a href="https://github.com/medialab-prado/ecosdemedialab">https://github.com/medialab-prado/ecosdemedialab</a></li>
+<li><a href="https://archive.org/details/@flowsta">https://archive.org/details/@flowsta</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org955c420" class="outline-2">
+<h2 id="org955c420">Recolección de datos</h2>
+<div class="outline-text-2" id="text-org955c420">
+<ul class="org-ul">
+<li>DocumentCloud, <a href="https://www.documentcloud.org/">https://www.documentcloud.org/</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6be12f5" class="outline-2">
+<h2 id="org6be12f5">Análisis de datos</h2>
+<div class="outline-text-2" id="text-org6be12f5">
+</div>
+<div id="outline-container-orgd4510d5" class="outline-3">
+<h3 id="orgd4510d5">Open Refine</h3>
+<div class="outline-text-3" id="text-orgd4510d5">
+<ul class="org-ul">
+<li>URL, <a href="https://openrefine.org">https://openrefine.org</a></li>
+<li>Manual, <a href="https://github.com/flowsta/refine">https://github.com/flowsta/refine</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge98dfe3" class="outline-3">
+<h3 id="orge98dfe3">csvkit</h3>
+<div class="outline-text-3" id="text-orge98dfe3">
+<p>
+Instalación:
+</p>
+<pre class="example">
+pip install csvkit
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga32b785" class="outline-2">
+<h2 id="orga32b785">Gestión de datos</h2>
+<div class="outline-text-2" id="text-orga32b785">
+</div>
+<div id="outline-container-org9b8fdf7" class="outline-3">
+<h3 id="org9b8fdf7">Github</h3>
+<div class="outline-text-3" id="text-org9b8fdf7">
+<ul class="org-ul">
+<li>Mi manual, <a href="https://github.com/flowsta/github">https://github.com/flowsta/github</a></li>
+<li>Mi web, <a href="http://flowsta.github.io/github/">http://flowsta.github.io/github/</a></li>
+<li>Web oficial, <a href="https://git-scm.com/">https://git-scm.com/</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgf3c8490" class="outline-2">
+<h2 id="orgf3c8490">Proyectos</h2>
+<div class="outline-text-2" id="text-orgf3c8490">
+</div>
+<div id="outline-container-org519e3f8" class="outline-3">
+<h3 id="org519e3f8">Ciudad desigual</h3>
+<div class="outline-text-3" id="text-org519e3f8">
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga2efebb" class="outline-2">
+<h2 id="orga2efebb">Bases</h2>
+<div class="outline-text-2" id="text-orga2efebb">
+</div>
+<div id="outline-container-org753a135" class="outline-3">
+<h3 id="org753a135">Editor de textos</h3>
+<div class="outline-text-3" id="text-org753a135">
+<ul class="org-ul">
+<li><a href="http://air.decontextualize.com/plain-text/">http://air.decontextualize.com/plain-text/</a></li>
+<li><a href="https://blog.infotics.es/2015/11/11/editor-de-textos/">https://blog.infotics.es/2015/11/11/editor-de-textos/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8e94d50" class="outline-3">
+<h3 id="org8e94d50">Navegador</h3>
+<div class="outline-text-3" id="text-org8e94d50">
+<ul class="org-ul">
+<li>Recuperación de información</li>
+<li>Buscadores</li>
+<li>Operadores de búsqueda</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org542717c" class="outline-3">
+<h3 id="org542717c">Donald Knuth</h3>
+<div class="outline-text-3" id="text-org542717c">
+</div>
+<div id="outline-container-org6ba4a9c" class="outline-4">
+<h4 id="org6ba4a9c">Literate Programming</h4>
+<div class="outline-text-4" id="text-org6ba4a9c">
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge648128" class="outline-3">
+<h3 id="orge648128">Open Refine</h3>
+<div class="outline-text-3" id="text-orge648128">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3d8fed5" class="outline-2">
+<h2 id="org3d8fed5">Data</h2>
+<div class="outline-text-2" id="text-org3d8fed5">
+</div>
+<div id="outline-container-org793f889" class="outline-3">
+<h3 id="org793f889">Dataset for visualisation construction</h3>
+<div class="outline-text-3" id="text-org793f889">
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf76dc74" class="outline-2">
+<h2 id="orgf76dc74">R</h2>
+<div class="outline-text-2" id="text-orgf76dc74">
+</div>
+<div id="outline-container-org7f77a27" class="outline-3">
+<h3 id="org7f77a27">Por qué R</h3>
+<div class="outline-text-3" id="text-org7f77a27">
+<ul class="org-ul">
+<li><a href="https://timogrossenbacher.ch/2015/12/why-data-journalists-should-start-using-r-in-2016/">https://timogrossenbacher.ch/2015/12/why-data-journalists-should-start-using-r-in-2016/</a></li>
+<li><a href="https://smach.github.io/R4JournalismBook/HowDoI.html">https://smach.github.io/R4JournalismBook/HowDoI.html</a></li>
+<li><a href="http://rstudio-pubs-static.s3.amazonaws.com/6975_c4943349b6174f448104a5513fed59a9.html">http://rstudio-pubs-static.s3.amazonaws.com/6975_c4943349b6174f448104a5513fed59a9.html</a></li>
+<li><a href="https://www.r-bloggers.com/cross-tabulation-with-xtabs-exercises/">https://www.r-bloggers.com/cross-tabulation-with-xtabs-exercises/</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org0271673" class="outline-2">
+<h2 id="org0271673">Data</h2>
+<div class="outline-text-2" id="text-org0271673">
+</div>
+<div id="outline-container-orgafa3f51" class="outline-3">
+<h3 id="orgafa3f51">Medios</h3>
+<div class="outline-text-3" id="text-orgafa3f51">
+<ul class="org-ul">
+<li>The Guardian Polls, <a href="https://docs.google.com/spreadsheets/d/1oHcxlAbkTJmqfOxYQM22cvjjjRf5pETIF30x7L-qybc/edit#gid=0">https://docs.google.com/spreadsheets/d/1oHcxlAbkTJmqfOxYQM22cvjjjRf5pETIF30x7L-qybc/edit#gid=0</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf2e10d" class="outline-3">
+<h3 id="orgdf2e10d">España</h3>
+<div class="outline-text-3" id="text-orgdf2e10d">
+<ul class="org-ul">
+<li>Base de datos de comercio exterior: <a href="http://aduanas.camaras.org/">http://aduanas.camaras.org/</a></li>
+<li>CNMV, <a href="http://www.cnmv.es/portal/home.aspx">http://www.cnmv.es/portal/home.aspx</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf583862" class="outline-2">
+<h2 id="orgf583862">Google Spreadsheet</h2>
+<div class="outline-text-2" id="text-orgf583862">
+</div>
+<div id="outline-container-orgd952dba" class="outline-3">
+<h3 id="orgd952dba">ImportURL</h3>
+<div class="outline-text-3" id="text-orgd952dba">
+<pre class="example">
+IMPORTHTML(url; consulta; índice)
+</pre>
+
+<pre class="example">
+=IMPORTHTML("https://es.wikipedia.org/wiki/Esc%C3%A1ndalo_de_emisiones_contaminantes_de_veh%C3%ADculos_Volkswagen";"table";3)
+</pre>
+
+<pre class="example">
+=IMPORTHTML("https://es.wikipedia.org/wiki/Esc%C3%A1ndalo_de_emisiones_contaminantes_de_veh%C3%ADculos_Volkswagen";"list";5)
+</pre>
+
+<pre class="example">
+=IMPORTHTML("https://es.wikipedia.org/wiki/Esc%C3%A1ndalo_de_emisiones_contaminantes_de_veh%C3%ADculos_Volkswagen";"list";6)
+</pre>
+
+<pre class="example">
+=IMPORTHTML("http://en.wikipedia.org/wiki/2012_Summer_Olympics_medal_table";"table";2)
+</pre>
+
+<pre class="example">
+=IMPORTHTML("http://cincodias.com"; "table"; 2)
+</pre>
+</div>
+</div>
+<div id="outline-container-org847a169" class="outline-3">
+<h3 id="org847a169">ImportXML</h3>
+<div class="outline-text-3" id="text-org847a169">
+<pre class="example">
+=IMPORTXML("http://cincodias.com/cincodias/economia.html";"//div[@class='mod_i']//h3")
+</pre>
+<p>
+count(//div[@class='textoNovedadesSeccionInterior']//a/@href)
+//img/@alt
+//a[contains('Escuela')]/@href
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3ca26b6" class="outline-3">
+<h3 id="org3ca26b6">ImportFeed</h3>
+<div class="outline-text-3" id="text-org3ca26b6">
+<pre class="example">
+=importfeed("http://cincodias.com/rss/tags/ultimas_noticias.xml";"items url";VERDADERO;250)
+</pre>
+
+<p>
+url: <a href="http://www.ft.com/rss/home/europe">http://www.ft.com/rss/home/europe</a>
+</p>
+<pre class="example">
+=importfeed(B2;"items url";VERDADERO;250)
+</pre>
+
+<p>
+<a href="https://elpais.com/tag/dia_internacional_eliminacion_violencia_contra_la_mujer/a/">https://elpais.com/tag/dia_internacional_eliminacion_violencia_contra_la_mujer/a/</a>
+<a href="https://elpais.com/tag/rss/dia_internacional_eliminacion_violencia_contra_la_mujer/a">https://elpais.com/tag/rss/dia_internacional_eliminacion_violencia_contra_la_mujer/a</a>
+</p>
+<pre class="example">
+=importfeed(C1;"items url";VERDADERO;250)
+</pre>
+
+<p>
+<a href="http://www.ejercito.mde.es/unidades/Madrid/index.html">http://www.ejercito.mde.es/unidades/Madrid/index.html</a>
+<a href="http://www.ine.es/prensa/epa_tabla.htm">http://www.ine.es/prensa/epa_tabla.htm</a>
+</p>
+
+<pre class="example">
+=IMPORTHTML(C1;"table";2)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org940e070" class="outline-2">
+<h2 id="org940e070">UTC Format</h2>
+<div class="outline-text-2" id="text-org940e070">
+</div>
+<div id="outline-container-org6dafbfe" class="outline-3">
+<h3 id="org6dafbfe">Dates</h3>
+<div class="outline-text-3" id="text-org6dafbfe">
+<p>
+A date in UTC format looks like this:
+</p>
+
+<p>
+2010-11-12 
+</p>
+
+<p>
+That format contains a four-digit year, a 2-digit month, and a 2-digit day, separated by hyphens (yyyy-MM-dd).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org906a2cf" class="outline-3">
+<h3 id="org906a2cf">Times</h3>
+<div class="outline-text-3" id="text-org906a2cf">
+<p>
+A time in UTC format looks like this:
+</p>
+
+<p>
+13:14:15Z 
+</p>
+
+<p>
+That format contains 2-digits for the hour (13), based on a 24-hour clock, followed by two digits for minutes (14), and two digits for seconds (15), separated by colons (HH:mm:ss).
+</p>
+
+<p>
+Considerations
+</p>
+
+<p>
+Although the standard allows for milliseconds, the platform does not use them or accept them.
+The final character in the format designates the time zone, where Z is "zero-time", or Greenwich Mean Time.
+Times should be expressed with the UTC designator ‘Z’. It should not be expressed using a timezone offset. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeadead5" class="outline-3">
+<h3 id="orgeadead5">Date/Times</h3>
+<div class="outline-text-3" id="text-orgeadead5">
+<p>
+A date/time looks like this:
+</p>
+
+<p>
+2010-11-12T13:14:15Z 
+</p>
+
+<p>
+That format contains a date and a time, separated by the letter "T".
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc54ec00" class="outline-2">
+<h2 id="orgc54ec00">Datavis</h2>
+<div class="outline-text-2" id="text-orgc54ec00">
+</div>
+<div id="outline-container-org485697a" class="outline-3">
+<h3 id="org485697a">Historia</h3>
+<div class="outline-text-3" id="text-org485697a">
+<p>
+En los precedentes de la visualización de datos que suelo enseñar
+vemos trabajos donde la estadística estaba presente:
+</p>
+</div>
+
+<div id="outline-container-org162bbee" class="outline-4">
+<h4 id="org162bbee">Charles Minard</h4>
+</div>
+
+<div id="outline-container-orga7014e2" class="outline-4">
+<h4 id="orga7014e2">John Snow</h4>
+<div class="outline-text-4" id="text-orga7014e2">
+<p>
+Normalmente se muestran un par de imágenes del mapa de cólera de John
+Snow por lo que merece la pena mirar este trabajo de James Chesire
+sobre <a href="https://spatial.ly/2019/03/mapping-and-visualising-cholera-data/">visualización y mapeo del cólera</a>. 
+</p>
+</div>
+</div>
+<div id="outline-container-org27a0e51" class="outline-4">
+<h4 id="org27a0e51">Florence Nightingale</h4>
+</div>
+</div>
+
+<div id="outline-container-org5548502" class="outline-3">
+<h3 id="org5548502">BBPlot</h3>
+<div class="outline-text-3" id="text-org5548502">
+<p>
+R package that helps create and export ggplot2 charts in the style used by the BBC News data team
+</p>
+</div>
+</div>
+<div id="outline-container-org2dfcafa" class="outline-3">
+<h3 id="org2dfcafa">BBC R and Data Journalism Cookbook for R Graphics</h3>
+<div class="outline-text-3" id="text-org2dfcafa">
+<p>
+At the BBC data team, we have developed an R package and an R cookbook to make the process of creating publication-ready graphics in our in-house style using R’s ggplot2 library a more reproducible process, as well as making it easier for people new to R to create graphics.
+</p>
+</div>
+</div>
+<div id="outline-container-org9b6c9a7" class="outline-3">
+<h3 id="org9b6c9a7">Arte final</h3>
+<div class="outline-text-3" id="text-org9b6c9a7">
+<p>
+Hubo una pregunta sobre si las herramientas que estábamos viendo o
+íbamos a ver --al final no dio tiempo a todas-- eran las que se
+utilizaban para el arte final. En abrumadora medida los programas
+privativos y propietarios de diseño gráfico --léase, la ahora
+monopolística Adobe; antaño estaban Corel y Macromedia disputándole
+segmentos de mercado-- se utilizan para imprimir ese aspecto final
+cuidado tanto al gráfico impreso como al que se expone en la web como
+una imagen.
+</p>
+
+<p>
+Para los gráficos web corremos mejor suerte pues hay muchas soluciones
+igualmente propietarias y privativas que se disputan ser la
+herramienta disruptiva con la que sin saber programar, ni diseñar, ni
+estadística ni nada haces un gráfico o mapa molón, pero también hay
+muchas librerías javascript libres que permiten hacer trabajos muy
+elaborados.
+</p>
+
+<p>
+En este sentido mencionamos, por ejemplo, d3js.org. No nos metimos en
+Processing (p5js y similares) pues estar aparentemente más orientados
+al mundo artístico y experimental que al de trabajar con datos.
+</p>
+
+<p>
+También incidimos en este punto, una vez más, en señalar que la
+visualización con mayúsculas no forma parte solo del arte final sino
+también y para quienes trabajamos con datos fundamentalmente de la
+parte analítica del trabajo con datos.
+</p>
+
+<p>
+Aquí mencionamos algunas librerías de Python utilizadas para
+visualizar, plotear, hacer gráficos:
+</p>
+<ul class="org-ul">
+<li><a href="https://matplotlib.org/">Matplotlib</a></li>
+<li><a href="https://demo.bokeh.org/">Bokeh</a></li>
+</ul>
+
+<p>
+O de R:
+</p>
+<ul class="org-ul">
+<li>ggplot2</li>
+</ul>
+
+
+<p>
+Pese al monopolio citado anteriormente, un grupo de irreductibles
+galos mantienen el interés por el software libre en el diseño gráfico
+y se puede realizar con herramientas profesionales:
+</p>
+<ul class="org-ul">
+<li><a href="https://www.gimp.org/">Gimp</a>, para mapas de bit, imágenes.</li>
+<li><a href="https://inkscape.org/">Inkscape</a>, para trabajo con vectores.</li>
+<li><a href="https://www.scribus.net/">Scribus</a>, maquetación.</li>
+<li><a href="http://www.selapa.net/swatchbooker/">Swatch Boker</a>, paleta de colores</li>
+<li><a href="https://imagemagick.org/index.php">Imagemagick</a>, tratamiento de imágenes desde línea de comandos.</li>
+</ul>
+
+<p>
+Con algún ejemplo extraordinario, que no por ello menos factible de
+replicar y que de hecho es uno de los ejemplos que inspiran el <a href="https://masterperiodismodatos.com">Máster
+de Periodismo y Visualización de Datos</a> de la Universidad de Alcalá de
+Henares (UAH).
+</p>
+
+<p>
+Es el caso de <a href="https://www.katiejolly.io/">Katie Jolly</a> tal como explica en su artículo <a href="https://www.katiejolly.io/blog/2019-04-25/data-driven-design">Data Driven
+Design</a>: Data-driven design in 'Curious City: In, Out, Above, Beyond
+Saint Paul', donde expone su interés por el llamado "information
+design" o diseño de información y cómo utiliza R y software de diseño
+gráfico para crear una visualización llamada "Turning the Page" para
+el libro "Curious City: In, Out, Above, Beyond Saint Paul".
+</p>
+
+
+<div class="figure">
+<p><img src="https://www.katiejolly.io/blog//assets/curious-city/kjolly_final.png" alt="kjolly_final.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Trabajo final K. Jolly</p>
+</div>
+
+<p>
+El interés le vino siguiendo el trabajo de <a href="https://spatial.ly/">James Chesire</a> que suponía
+que, dado que era un usuario de <a href="https://cran.r-project.org/">R</a> y de <a href="https://ggplot2.tidyverse.org/">ggplot2</a>, igual usaba software
+libre.
+</p>
+
+
+<div class="figure">
+<p><img src="https://www.katiejolly.io/blog//assets/curious-city/treasures_before_after.jpg" alt="treasures_before_after.jpg" />
+</p>
+</div>
+
+<p>
+De hecho el ejemplo anterior está sacado del artículo <a href="http://theinformationcapital.com/coder-designer/">The coder and the designer</a> donde cuenta su
+experiencia con R y cómo se apoya en sus visualizaciones para el arte
+final.
+</p>
+</div>
+</div>
+<div id="outline-container-orga01b091" class="outline-3">
+<h3 id="orga01b091">Recursos</h3>
+<div class="outline-text-3" id="text-orga01b091">
+<ul class="org-ul">
+<li>Gamas de colores: <a href="https://coolors.co/">https://coolors.co/</a></li>
+<li>Esquemas de colores, <a href="https://www.design-seeds.com/category/studio-hues/collage/">https://www.design-seeds.com/category/studio-hues/collage/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org89c39db" class="outline-2">
+<h2 id="org89c39db">Ejemplos data journalism y data visualisation</h2>
+<div class="outline-text-2" id="text-org89c39db">
+<ul class="org-ul">
+<li>Axios: <a href="https://www.axios.com/">https://www.axios.com/</a></li>
+<li>Five Thirty Eight:</li>
+</ul>
+</div>
+<div id="outline-container-orgdf51f86" class="outline-3">
+<h3 id="orgdf51f86">NPR</h3>
+<div class="outline-text-3" id="text-orgdf51f86">
+</div>
+<div id="outline-container-org4b83f14" class="outline-4">
+<h4 id="org4b83f14">Vídeos</h4>
+<div class="outline-text-4" id="text-org4b83f14">
+<p>
+<a href="https://www.npr.org/series/718730324/video">https://www.npr.org/series/718730324/video</a>
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="orgec6addf"></a>Let's Talk<br />
+<ul class="org-ul">
+<li><a id="org983f425"></a>Video housing segregation in everything<br />
+<div class="outline-text-6" id="text-org983f425">
+<p>
+<a href="https://www.npr.org/sections/codeswitch/2018/04/11/601494521/video-housing-segregation-in-everything">https://www.npr.org/sections/codeswitch/2018/04/11/601494521/video-housing-segregation-in-everything</a>
+</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4b0fd97" class="outline-2">
+<h2 id="org4b0fd97">Web</h2>
+<div class="outline-text-2" id="text-org4b0fd97">
+</div>
+<div id="outline-container-org6d9a043" class="outline-3">
+<h3 id="org6d9a043">Plantillas HTML</h3>
+<div class="outline-text-3" id="text-org6d9a043">
+<ul class="org-ul">
+<li>Plantillas HTML5 en <a href="https://html5up.net/">https://html5up.net/</a></li>
+<li>Bootstrap: <a href="https://getbootstrap.com/">https://getbootstrap.com/</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6fd7cb1" class="outline-3">
+<h3 id="org6fd7cb1">SSG</h3>
+<div class="outline-text-3" id="text-org6fd7cb1">
+<p>
+/Static Site Generator/ o sistemas de generación de contenido
+estático:
+</p>
+<ul class="org-ul">
+<li>Jekyll, <a href="https://jekyllrb.com/">https://jekyllrb.com/</a></li>
+<li>Hugo, <a href="https://gohugo.io/">https://gohugo.io/</a></li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6d29b0b" class="outline-2">
+<h2 id="org6d29b0b">Seguridad</h2>
+<div class="outline-text-2" id="text-org6d29b0b">
+</div>
+<div id="outline-container-orgdad44fe" class="outline-3">
+<h3 id="orgdad44fe">Tor Browser</h3>
+</div>
+
+<div id="outline-container-orgfa6764b" class="outline-3">
+<h3 id="orgfa6764b">VPN</h3>
+<div class="outline-text-3" id="text-orgfa6764b">
+<p>
+<a href="https://riseup.net/en/vpn">https://riseup.net/en/vpn</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1ae63cb" class="outline-2">
+<h2 id="org1ae63cb">Recursos</h2>
+<div class="outline-text-2" id="text-org1ae63cb">
+<ul class="org-ul">
+<li>Implant Files: <a href="https://medicaldevices.icij.org/">https://medicaldevices.icij.org/</a></li>
+<li>Instituto Geográfico Nacional (IGN), <a href="https://datos.ign.es/">https://datos.ign.es/</a>,
+<a href="https://twitter.com/ocorcho/status/1106989535961993216?s=20">https://twitter.com/ocorcho/status/1106989535961993216?s=20</a></li>
+<li>Offshore Leaks, <a href="https://offshoreleaks.icij.org/">https://offshoreleaks.icij.org/</a></li>
+<li>Instituto Nacional de Estadística (INE), <a href="https://www.ine.es/">https://www.ine.es/</a></li>
+<li>Wikileaks, <a href="https://wikileaks.org/">https://wikileaks.org/</a></li>
+<li>NICAR, <a href="https://www.ire.org/nicar/">https://www.ire.org/nicar/</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc11f42d" class="outline-2">
+<h2 id="orgc11f42d">Periodismo</h2>
+<div class="outline-text-2" id="text-orgc11f42d">
+<ul class="org-ul">
+<li>CPJ, Committee to Protect Journalists, <a href="https://www.cpj.org">https://www.cpj.org</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
